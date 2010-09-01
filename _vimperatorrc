@@ -61,6 +61,9 @@ cmap <C-p> <up>
 
 :map ,lh :emenu Tools.Live HTTP headers<CR>
 
+:map ,pe :emenu Tools.FoxyProxy Standard.ramhost.Use proxy "ramhost" for all URLs<CR>
+:map ,pd :emenu Tools.FoxyProxy Standard.Completely disable FoxyProxy<CR>
+
 " }}}1
 
 " autocommands {{{1
