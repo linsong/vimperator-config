@@ -1,10 +1,12 @@
 " settings
 
-set guioptions+=m
+"set guioptions+=m
+set gui=none,tabs
+
 " use the firefox awesomebar style hints 
-set wildoptions=auto
-set complete=l
-"set complete=sbhfS
+"set wildoptions=auto
+
+set complete=slf
 
 "should match the name set in ":dialog searchengine" dialog
 "set defsearch=google
@@ -14,7 +16,7 @@ set incsearch
 set smartcase
 
 set showmode
-set showstatuslinks
+"set showstatuslinks
 
 set nextpattern+=^\s*下一页\s*$,^\s*下一张\s*$,^››$
 set previouspattern+=^\s*上一页\s*$,^\s*上一张\s*$,^‹‹$
@@ -95,21 +97,6 @@ EOM
   toggle_element = function (name){
     document.getElementById(name).collapsed ^= 1;
   }
-EOF
-
-" Toggle webdeveloper toolbar
-map <C-T> :js toggle_element('webdeveloper-toolbar')<CR>
-
-javascript <<EOF
-(function(){
- var feedPanel = document.createElement("statusbarpanel");
- feedPanel.setAttribute("id", "feed-panel-clone");
- feedPanel.appendChild(document.getElementById("feed-button"));
- feedPanel.firstChild.setAttribute("style", "padding: 0; max-height: 16px;");
- document.getElementById("status-bar")
- .insertBefore(feedPanel, document.getElementById("security-button"));
- })();
-
 EOF
 
 "javascript <<EOF
