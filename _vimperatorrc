@@ -66,7 +66,10 @@ cmap <C-p> <up>
 :map ,pe :emenu Tools.FoxyProxy Standard.ramhost.Use proxy "ramhost" for all URLs<CR>
 :map ,pd :emenu Tools.FoxyProxy Standard.Completely disable FoxyProxy<CR>
 
-:map <M-f> / "disable default search 
+:cmap s3fox :emenu Tools.S3 Organizer<CR>
+
+" disable default search 
+:map <M-f> / 
 
 " }}}1
 
