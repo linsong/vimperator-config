@@ -44,7 +44,7 @@ set go-=D
 liberator.plugins.delicious = (function(){
 
 let uuid = PLUGIN_INFO.require[0].@id.toString();
-if (Application.extensions.has(uuid) && Application.extensions.get(uuid).enabled){
+if (Application.extensions != undefined && Application.extensions.has(uuid) && Application.extensions.get(uuid).enabled){
   const ydls = Cc["@yahoo.com/nsYDelLocalStore;1"].getService(Ci.nsIYDelLocalStore);
 } else {
   return null;
