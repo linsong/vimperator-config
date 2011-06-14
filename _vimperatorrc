@@ -74,9 +74,8 @@ cmap <C-p> <up>
 " }}}1
 
 " autocommands {{{1
-"au LocationChange .* :js modes.passAllKeys = /mail\.google\.com/.test(buffer.URL)
-au LocationChange .* :js modes.passAllKeys = /www\.google\.com\/reader/.test(buffer.URL)
-au LocationChange .* :js modes.passAllKeys = /www\.delicious\.com\/save/.test(buffer.URL)
+" for autocmd not working issue: http://code.google.com/p/vimperator-labs/issues/detail?id=406
+autocmd LocationChange .* js modes.passAllKeys = /mail\.google\.com/.test(buffer.URL) || /www\.google\.com\/reader/.test(buffer.URL) || /www\.delicious\.com\/save/.test(buffer.URL)
 
 "" for Linux 
 "":au LocationChange .* :set editor=gvim -f
@@ -87,16 +86,16 @@ au LocationChange .* :js modes.passAllKeys = /www\.delicious\.com\/save/.test(bu
 " }}}1
 
 " Changing the command line color when focused
-javascript <<EOM
-  (function() {
-      var inputElement = document.getElementById('liberator-commandline-command');
-      function swapBGColor(event) {
-        inputElement.parentNode.style.backgroundColor = event.type == "focus" ? "yellow" : "";
-      }
-      inputElement.addEventListener('focus', swapBGColor, false);
-      inputElement.addEventListener('blur', swapBGColor, false);
-  })();
-EOM
+"javascript <<EOM
+  "(function() {
+      "var inputElement = document.getElementById('liberator-commandline-command');
+      "function swapBGColor(event) {
+        "inputElement.parentNode.style.backgroundColor = event.type == "focus" ? "yellow" : "";
+      "}
+      "inputElement.addEventListener('focus', swapBGColor, false);
+      "inputElement.addEventListener('blur', swapBGColor, false);
+  "})();
+"EOM
 
 " Toggle element
 :js << EOF
