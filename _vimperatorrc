@@ -66,8 +66,6 @@ cmap <C-p> <up>
 :map ,pe :emenu Tools.FoxyProxy Standard.ramhost.Use proxy "ramhost" for all URLs<CR>
 :map ,pd :emenu Tools.FoxyProxy Standard.Completely disable FoxyProxy<CR>
 
-:cmap s3fox :emenu Tools.S3 Organizer<CR>
-
 " disable default search 
 :map <M-f> / 
 
@@ -75,8 +73,7 @@ cmap <C-p> <up>
 
 " autocommands {{{1
 "au LocationChange .* :js modes.passAllKeys = /mail\.google\.com/.test(buffer.URL)
-au LocationChange .* :js modes.passAllKeys = /www\.google\.com\/reader/.test(buffer.URL)
-au LocationChange .* :js modes.passAllKeys = /www\.delicious\.com\/save/.test(buffer.URL)
+au LocationChange .* :js modes.passAllKeys = /www\.google\.com\/reader/.test(buffer.URL) || /www\.delicious\.com\/save/.test(buffer.URL)
 
 "" for Linux 
 "":au LocationChange .* :set editor=gvim -f
