@@ -77,6 +77,7 @@ cmap <C-p> <up>
 
 " autocommands {{{1
 " for autocmd not working issue: http://code.google.com/p/vimperator-labs/issues/detail?id=406
+" simple note is for one kind of autocmd, define it only once, otherwise the latter one will override the previous one
 autocmd LocationChange .* js modes.passAllKeys = /mail\.google\.com/.test(buffer.URL) || /www\.google\.com\/reader/.test(buffer.URL) || /www\.delicious\.com\/save/.test(buffer.URL)
 
 "" for Linux 
