@@ -66,7 +66,9 @@ cmap <C-p> <up>
 :map ,pe :emenu Tools.FoxyProxy Standard.ramhost.Use proxy "ramhost" for all URLs<CR>
 :map ,pd :emenu Tools.FoxyProxy Standard.Completely disable FoxyProxy<CR>
 
-:cmap s3fox :emenu Tools.S3 Organizer<CR>
+:map ,s3 :emenu Tools.S3 Organizer<CR>
+
+:map ,v :emenu Cocoon.Login<CR>
 
 " disable default search 
 :map <M-f> / 
@@ -103,15 +105,6 @@ autocmd LocationChange .* js modes.passAllKeys = /mail\.google\.com/.test(buffer
     document.getElementById(name).collapsed ^= 1;
   }
 EOF
-
-"javascript <<EOF
-" inject_jquery = function(){
-"   var s = document.createElement('script');
-"   s.setAttribute('src', 'http://jquery.com/src/jquery-latest.js');
-"   document.getElementsByTagName('body')[0].appendChild(s);
-" };
-"EOF
-"command! jquery js inject_jquery()
 
 javascript <<EOF
 delicious = function(){
