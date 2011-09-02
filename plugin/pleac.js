@@ -1,3 +1,12 @@
+/**
+ * Plugin to open specified language examples page 
+ *
+ * Usage:
+ *   :pleac                       open default(python) pleac page 
+ *   :pleac ruby strings          open ruby strings' examples page
+ *
+*/
+
 function Pleac() {
   return {
     _execute: function(args){
